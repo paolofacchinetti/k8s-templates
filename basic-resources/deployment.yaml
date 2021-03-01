@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  selector:
+    matchLabels:
+      name: my-name
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name: my-name
+    spec:
+      containers:
+        - name: container-name
+          image: your-image
+      imagePullSecrets:
+        - name: regcred

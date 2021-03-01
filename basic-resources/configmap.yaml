@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-configmap
+data:
+  my-key: my-value
+  CONFIG-FILE: |
+    #
+    # Properties file for session
+    #
+    HOST=52.31.174.159
+    PORT=6379
+    DB=3
+    USER=
+    PASSWORD={{ .Values.secrets.sessionpw }}
